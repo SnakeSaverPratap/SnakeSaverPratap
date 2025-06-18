@@ -13,6 +13,24 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://snakesaverpratap.github.io/SnakeSaverPratap/#about</loc>
+    <lastmod>2025-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snakesaverpratap.github.io/SnakeSaverPratap/#service</loc>
+    <lastmod>2025-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snakesaverpratap.github.io/SnakeSaverPratap/#booking</loc>
+    <lastmod>2025-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://snakesaverpratap.github.io/SnakeSaverPratap/contact.html</loc>
     <lastmod>2025-06-16</lastmod>
     <changefreq>monthly</changefreq>

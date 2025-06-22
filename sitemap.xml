@@ -12,10 +12,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://snakesaverpratap.github.io/SnakeSaverPratap/contact.html</loc>
-    <lastmod>2025-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+ 
 </urlset>

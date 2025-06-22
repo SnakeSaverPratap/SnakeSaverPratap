@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://snakesaverpratap.github.io/SnakeSaverPratap/sitemap.xml

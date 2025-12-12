@@ -20,7 +20,7 @@
       :root{--flash-duration:9999s;} /* effectively disables flashing */
     }
 
-    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,\"Helvetica Neue\",Arial; background:linear-gradient(180deg,#070707 0%, #111111 100%); color:var(--text);}
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial; background:linear-gradient(180deg,#070707 0%, #111111 100%); color:var(--text);}    
     .wrap{min-height:100%;display:grid;place-items:center;padding:32px}
 
     .card{
@@ -47,9 +47,9 @@
     /* simple flashing pulse for the triangle */
     @keyframes pulse{
       0%{transform:scale(1); filter:drop-shadow(0 0 0 rgba(255,45,45,0.0));}
-      25%{transform:scale(1.05);}
+      25%{transform:scale(1.05);} 
       50%{transform:scale(1); filter:drop-shadow(0 0 30px rgba(255,45,45,0.55));}
-      100%{transform:scale(1);}
+      100%{transform:scale(1);}    
     }
 
     .triangle{
@@ -78,8 +78,10 @@
       100%{opacity:0}
     }
 
-    /* Controls */
+    /* Controls (visually hidden to satisfy the user's removal request but present for scripts) */
     .controls{display:flex;gap:12px;margin-top:18px;align-items:center}
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px}
+
     button{background:#141414;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer}
     button:active{transform:translateY(1px)}
 
@@ -95,6 +97,14 @@
       .message{width:100%}
       .flash-text{font-size:20px}
     }
+
+    /* Overlay shown to request a user gesture to enable sound */
+    #soundOverlay{
+      position:fixed;inset:0;display:grid;place-items:center;background:rgba(0,0,0,0.6);z-index:9999;backdrop-filter:blur(4px);
+    }
+    #soundOverlay.hidden{display:none}
+    #soundOverlay .panel{background:#111;padding:18px 22px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);text-align:center}
+    #soundOverlay p{margin:0 0 12px;color:#fff}
 
   </style>
 </head>
@@ -122,8 +132,23 @@
         <!-- The user-specified message (preserved as requested). Use aria-live for screen readers. -->
         <p class="flash-text" id="flashText" aria-live="assertive">server compromished plese exit</p>
 
-         </div>
+        <!-- Hidden controls: present so scripts can attach listeners but not visible to the user -->
+        <div class="controls visually-hidden" id="hiddenControls" aria-hidden="true">
+          <button id="toggleFlash" type="button">Pause flashing</button>
+          <button id="correctText" type="button">Show corrected text</button>
+          <span class="small">Flashing respects users' "reduced motion" settings.</span>
+        </div>
+
+      </div>
     </div>
+  </div>
+
+  <!-- Overlay that prompts the user to enable sound. Visible by default because we will not autoplay. -->
+  <div id="soundOverlay" role="dialog" aria-modal="true">
+    <div class="panel">
+      <p>Tap to enable the alert sound (required by your browser).</p>
+      <button id="enableSoundBtn" type="button">Enable sound</button>
+       </div>
   </div>
 
   <script>
@@ -133,50 +158,146 @@
       const correctBtn = document.getElementById('correctText');
       const flashText = document.getElementById('flashText');
 
+      // Defensive: if any required element is missing, bail gracefully
+      if(!card || !flashText){
+        console.error('Required elements missing: ', {card, flashText});
+        return;
+      }
+
       let flashing = true;
-      toggleBtn.addEventListener('click', ()=>{
-        flashing = !flashing;
-        if(!flashing){
-          card.classList.add('no-flash');
-          toggleBtn.textContent = 'Resume flashing';
-        } else {
-          card.classList.remove('no-flash');
-          toggleBtn.textContent = 'Pause flashing';
-        }
-      });
+
+      if(toggleBtn){
+        toggleBtn.addEventListener('click', ()=>{
+          flashing = !flashing;
+          if(!flashing){
+            card.classList.add('no-flash');
+            toggleBtn.textContent = 'Resume flashing';
+          } else {
+            card.classList.remove('no-flash');
+            toggleBtn.textContent = 'Pause flashing';
+          }
+        });
+      }
 
       // Toggle between the user's original (with typos) and a corrected sentence
       const original = 'server compromished plese exit';
       const corrected = 'Server compromised — please exit immediately.';
       let showingCorrect = false;
-      correctBtn.addEventListener('click', ()=>{
-        showingCorrect = !showingCorrect;
-        flashText.textContent = showingCorrect ? corrected : original;
-        correctBtn.textContent = showingCorrect ? 'Show original text' : 'Show corrected text';
-      });
+
+      if(correctBtn){
+        correctBtn.addEventListener('click', ()=>{
+          showingCorrect = !showingCorrect;
+          flashText.textContent = showingCorrect ? corrected : original;
+          correctBtn.textContent = showingCorrect ? 'Show original text' : 'Show corrected text';
+        });
+      }
 
       // Ensure animations are disabled if the user prefers reduced motion at runtime
       try{
         const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
         if(mq.matches){
           card.classList.add('no-flash');
-          toggleBtn.disabled = true;
-          toggleBtn.textContent = 'Flashing disabled (reduced-motion)';
+          if(toggleBtn) toggleBtn.disabled = true;
+          if(toggleBtn) toggleBtn.textContent = 'Flashing disabled (reduced-motion)';
         }
         mq.addEventListener && mq.addEventListener('change', (e)=>{
           if(e.matches){
             card.classList.add('no-flash');
-            toggleBtn.disabled = true;
-            toggleBtn.textContent = 'Flashing disabled (reduced-motion)';
+            if(toggleBtn) toggleBtn.disabled = true;
+            if(toggleBtn) toggleBtn.textContent = 'Flashing disabled (reduced-motion)';
           } else {
             card.classList.remove('no-flash');
-            toggleBtn.disabled = false;
-            toggleBtn.textContent = 'Pause flashing';
+            if(toggleBtn) toggleBtn.disabled = false;
+            if(toggleBtn) toggleBtn.textContent = 'Pause flashing';
           }
         });
       }catch(e){/* ignore in older browsers */}
 
     })();
+  </script>
+
+  <!-- We now create and play the audio only after a direct user gesture on the page -->
+  <script>
+    (function(){
+      const overlay = document.getElementById('soundOverlay');
+      const enableBtn = document.getElementById('enableSoundBtn');
+      const AUDIO_SRC = 'siren-alert-96052.mp3'; // place this file next to the HTML
+      let audioEl = null;
+
+      function createAndPlayAudio(){
+        if(audioEl) return audioEl.play();
+
+        audioEl = document.createElement('audio');
+        audioEl.src = AUDIO_SRC;
+        audioEl.loop = true;
+        audioEl.playsInline = true;
+        audioEl.volume = 0.8;
+        audioEl.preload = 'auto';
+
+        // Append offscreen so it's part of DOM and can be controlled
+        audioEl.style.position = 'fixed';
+        audioEl.style.left = '-9999px';
+        document.body.appendChild(audioEl);
+
+        // Play and return the promise
+        return audioEl.play();
+      }
+
+      function hideOverlay(){
+        overlay.classList.add('hidden');
+        overlay.setAttribute('aria-hidden','true');
+      }
+      function showOverlay(){
+        overlay.classList.remove('hidden');
+        overlay.removeAttribute('aria-hidden');
+      }
+
+      // If the file doesn't exist or playback fails, inform user in console and keep overlay visible
+      enableBtn.addEventListener('click', (e)=>{
+        // this click is a direct user gesture — use it to create & play the audio
+        createAndPlayAudio().then(()=>{
+          hideOverlay();
+          console.log('Alert sound playing');
+        }).catch((err)=>{
+          console.error('Play failed after user gesture:', err);
+          // show a short message in overlay
+          enableBtn.textContent = 'Play failed — try again';
+        });
+      });
+
+      // Also attempt on any first interaction (click/keydown) as extra safety
+      function onFirstInteraction(){
+        createAndPlayAudio().then(hideOverlay).catch(()=>{});
+        document.removeEventListener('click', onFirstInteraction);
+        document.removeEventListener('keydown', onFirstInteraction);
+      }
+      document.addEventListener('click', onFirstInteraction);
+      document.addEventListener('keydown', onFirstInteraction);
+
+      // Keep overlay visible until audio successfully plays
+      showOverlay();
+
+    })();
+  </script>
+
+  <script>
+    // Attempt to close the window after 15 seconds. NOTE: Most browsers will only allow window.close()
+    // if the page was opened via window.open() by script. Fallback: redirect to about:blank if close is blocked.
+    const closeAfter = 15000; // ms
+    setTimeout(() => {
+      try{
+        window.close();
+        // If window.close() is blocked, navigate away as a fallback
+        setTimeout(()=>{
+          if(!window.closed){
+            window.location.replace('about:blank');
+          }
+        }, 300);
+      }catch(e){
+        // As a last resort redirect
+        window.location.replace('about:blank');
+      }
+    }, closeAfter);
   </script>
 </body>
 </html>

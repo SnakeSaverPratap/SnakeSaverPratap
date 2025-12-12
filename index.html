@@ -1,929 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-   <!-- Primary Meta Tags -->
-<!-- Primary Meta Tags -->
-<title>Snake Rescue Force | Wildlife & Snake Rescue in Hooghly, Barrackpore & Dumdum</title>
-<link rel="canonical" href="https://snakesaverpratap.github.io/SnakeSaverPratap/" />
-<meta name="title" content="Snake Rescue Force | Wildlife & Snake Rescue in Hooghly, Barrackpore & Dumdum">
-<meta name="description" content="We rescue snakes and wild animals from homes, offices, and complexes across Hooghly, Barrackpore, and Dumdum. Trained team, safe handling, 24/7 wildlife rescue support.">
-<meta name="keywords" content="snake rescue, snake removal, snake catcher, wildlife rescue, snake control, wild animal rescue, python rescue, cobra rescue, venomous snake removal, snake rescue hooghly, snake rescue barrackpore, wildlife rescue dumdum, reptile removal, snake in house, animal rescue team, wild animal in home, rescue snake from
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Warning — Server Compromised</title>
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --card:#111;
+      --accent:#ff2d2d;
+      --accent-2:#ffd166;
+      --text:#fff;
+      --danger-size:160px;
+      --flash-duration:0.8s; /* animation speed */
+    }
 
-property">
-<meta name="author" content="Snake Rescue Force">
-<meta name="robots" content="index, follow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /* Respect users who request reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      :root{--flash-duration:9999s;} /* effectively disables flashing */
+    }
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://joymahanta.github.io/Snake-Rescue-Force/galarry.html">
-<meta property="og:title" content="Snake Rescue Force | Wildlife & Snake Rescue in Hooghly, Barrackpore & Dumdum">
-<meta property="og:description" content="Trained snake rescue team saving lives across Hooghly, Barrackpore, and Dumdum. Safe and humane wild animal handling.">
-<meta property="og:image" content="https://joymahanta.github.io/Snake-Rescue-Force/your-banner.jpg"> <!-- Replace with actual image -->
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,\"Helvetica Neue\",Arial; background:linear-gradient(180deg,#070707 0%, #111111 100%); color:var(--text);}
+    .wrap{min-height:100%;display:grid;place-items:center;padding:32px}
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://joymahanta.github.io/Snake-Rescue-Force/galarry.html">
-<meta name="twitter:title" content="Snake Rescue Force | Wildlife & Snake Rescue in Hooghly, Barrackpore & Dumdum">
-<meta name="twitter:description" content="We rescue snakes and wild animals from homes and properties across Hooghly, Barrackpore & Dumdum.">
-<meta name="twitter:image" content="https://joymahanta.github.io/Snake-Rescue-Force/your-banner.jpg"> <!-- Replace with actual image -->
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      padding:28px 36px;
+      border-radius:14px;
+      box-shadow:0 20px 40px rgba(2,2,2,0.6);
+      max-width:980px;
+      width:100%;
+      display:flex;
+      gap:28px;
+      align-items:center;
+    }
 
-<!-- Favicon (Optional) -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Favicon -->
-    <link href="img/favicon.png" rel="icon">
+    .danger{
+      width:var(--danger-size);
+      height:var(--danger-size);
+      min-width:var(--danger-size);
+      display:grid;place-items:center;
+      animation: pulse var(--flash-duration) linear infinite;
+    }
 
-    <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap"
-        rel="stylesheet">
+    /* simple flashing pulse for the triangle */
+    @keyframes pulse{
+      0%{transform:scale(1); filter:drop-shadow(0 0 0 rgba(255,45,45,0.0));}
+      25%{transform:scale(1.05);}
+      50%{transform:scale(1); filter:drop-shadow(0 0 30px rgba(255,45,45,0.55));}
+      100%{transform:scale(1);}
+    }
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    .triangle{
+      width:100%;height:100%;display:block;transform-origin:center center;
+    }
 
-    <!-- Flaticon Font -->
-    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+    .message{
+      flex:1;min-width:200px;
+    }
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    .headline{
+      font-size:20px;font-weight:700;letter-spacing:0.4px;margin:0 0 8px;color:var(--accent-2);
+    }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    .flash-text{
+      font-size:28px;font-weight:800;margin:0;line-height:1.05;color:var(--text);
+      animation:flashText var(--flash-duration) steps(2) infinite;
+      -webkit-font-smoothing:antialiased;
+      word-break:break-word;
+    }
+
+    @keyframes flashText{
+      0%{opacity:1}
+      49%{opacity:0}
+      50%{opacity:1}
+      100%{opacity:0}
+    }
+
+    /* Controls */
+    .controls{display:flex;gap:12px;margin-top:18px;align-items:center}
+    button{background:#141414;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer}
+    button:active{transform:translateY(1px)}
+
+    .small{font-size:13px;color:#bdbdbd}
+
+    /* safety style when flashing disabled */
+    .no-flash .danger{animation:none}
+    .no-flash .flash-text{animation:none;opacity:1}
+
+    /* layout for small screens */
+    @media (max-width:640px){
+      .card{flex-direction:column;align-items:center;text-align:center}
+      .message{width:100%}
+      .flash-text{font-size:20px}
+    }
+
+  </style>
 </head>
-
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid" id="home">
-        <!-- <div class="row bg-secondary py-2 px-lg-5">
-            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-white pr-3" href="">FAQs</a>
-                    <span class="text-white">|</span>
-                    <a class="text-white px-3" href="">Help</a>
-                    <span class="text-white">|</span>
-                    <a class="text-white pl-3" href="">Support</a>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-white px-3" href="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-white pl-3" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-        </div> -->
-        <div class="row py-3 px-lg-5">
-            <div class="col-lg-4">
-                <a href="" class="navbar-brand d-none d-lg-block">
-                   <h1 class="m-0 display-5 text-capitalize">
-  <img src="logo.png" alt="Snake Saver Logo" style="height: 87px; vertical-align: middle; margin-right: 8px;">
-  <span class="text-primary">
-    <design class="headdesign">Snake</design> saver
-  </span> Pratap
-</h1>
-<!-- chenge the color here -->
-                </a>
-            </div>
-            
-        </div>
+  <div class="wrap">
+    <div class="card" id="card">
+      <div class="danger" aria-hidden="true">
+        <!-- SVG danger triangle with exclamation -->
+        <svg class="triangle" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Danger">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ff9f9f" />
+              <stop offset="100%" stop-color="#ff2d2d" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#g)" d="M1.5 20.5h21L12 2.5 1.5 20.5z" />
+          <rect x="11" y="8.5" width="2" height="5" rx="1" fill="#fff" />
+          <rect x="11" y="15.5" width="2" height="2" rx="1" fill="#fff" />
+        </svg>
+      </div>
+
+      <div class="message">
+        <p class="headline">Security Alert</p>
+
+        <!-- The user-specified message (preserved as requested). Use aria-live for screen readers. -->
+        <p class="flash-text" id="flashText" aria-live="assertive">server compromished plese exit</p>
+
+         </div>
     </div>
-    <!-- Topbar End -->
+  </div>
 
+  <script>
+    (function(){
+      const card = document.getElementById('card');
+      const toggleBtn = document.getElementById('toggleFlash');
+      const correctBtn = document.getElementById('correctText');
+      const flashText = document.getElementById('flashText');
 
-    <!-- Navbar Start -->
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
-            <a href="" class="navbar-brand d-none d-lg-block">
-                 <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">
-                            <design class="headdesign"> Snake</design> saver
-                        </span>Pratap</h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                <div class="navbar-nav mr-auto py-0">
-                   <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#about" class="nav-item nav-link">About</a>
-                    <a href="#service" class="nav-item nav-link">Service</a>
-                    <!-- <a href="price.html" class="nav-item nav-link">Price</a> -->
-                    <a href="#booking" class="nav-item nav-link">Booking</a>
-                    <!-- <a href="price.html" class="nav-item nav-link">Price</a> -->
-                    <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
-                        </div>
-                    </div> -->
-                    <a href="galarry.html" class="nav-item nav-link">Glary</a>
-                </div>
-                <a href="tel:+918420334900" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Emergency</a>
+      let flashing = true;
+      toggleBtn.addEventListener('click', ()=>{
+        flashing = !flashing;
+        if(!flashing){
+          card.classList.add('no-flash');
+          toggleBtn.textContent = 'Resume flashing';
+        } else {
+          card.classList.remove('no-flash');
+          toggleBtn.textContent = 'Pause flashing';
+        }
+      });
 
-            </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
+      // Toggle between the user's original (with typos) and a corrected sentence
+      const original = 'server compromished plese exit';
+      const corrected = 'Server compromised — please exit immediately.';
+      let showingCorrect = false;
+      correctBtn.addEventListener('click', ()=>{
+        showingCorrect = !showingCorrect;
+        flashText.textContent = showingCorrect ? corrected : original;
+        correctBtn.textContent = showingCorrect ? 'Show original text' : 'Show corrected text';
+      });
 
+      // Ensure animations are disabled if the user prefers reduced motion at runtime
+      try{
+        const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if(mq.matches){
+          card.classList.add('no-flash');
+          toggleBtn.disabled = true;
+          toggleBtn.textContent = 'Flashing disabled (reduced-motion)';
+        }
+        mq.addEventListener && mq.addEventListener('change', (e)=>{
+          if(e.matches){
+            card.classList.add('no-flash');
+            toggleBtn.disabled = true;
+            toggleBtn.textContent = 'Flashing disabled (reduced-motion)';
+          } else {
+            card.classList.remove('no-flash');
+            toggleBtn.disabled = false;
+            toggleBtn.textContent = 'Pause flashing';
+          }
+        });
+      }catch(e){/* ignore in older browsers */}
 
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/snake.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Rescue Services</h3>
-                            <h1 class="display-3 text-white mb-3">Wildlife Rescue Services</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Monocled-Cobra</h5>
-                            <a href="tel:+918420334900" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">call Now</a>
-                            <a href="https://wa.me/918420334900?text=hellow%20i%20need%20some%20help" target="_blank"
-                                class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">WhatsApp</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/snake2.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Rescue Services</h3>
-                            <h1 class="display-3 text-white mb-3">Wildlife Rescue Services</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Spectacled-Cobra</h5>
-                            <a href="tel:+918420334900" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">call Now</a>
-                            <a href="https://wa.me/918420334900?text=hellow%20i%20need%20some%20help" target="_blank"
-                                class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/snake8.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Rescue Services</h3>
-                            <h1 class="display-3 text-white mb-3">Wildlife Rescue Services</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Common krait</h5>
-                            <a href="tel:+918420334900" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">call Now</a>
-                            <a href="https://wa.me/918420334900?text=hellow%20i%20need%20some%20help" target="_blank"
-                                class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img class="w-100" src="img/snake4.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Rescue Services</h3>
-                            <h1 class="display-3 text-white mb-3">Wildlife Rescue Services</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Russell's Viper</h5>
-                            <a href="tel:+918420334900" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">call Now</a>
-                            <a href="https://wa.me/918420334900?text=hellow%20i%20need%20some%20help" target="_blank"
-                                class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/banded.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Rescue Services</h3>
-                            <h1 class="display-3 text-white mb-3">Wildlife Rescue Services</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Banded krait</h5>
-                            <a href="tel:+918420334900" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">call Now</a>
-                            <a href="https://wa.me/918420334900?text=hellow%20i%20need%20some%20help" target="_blank"
-                                class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-primary rounded" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-prev-icon mb-n2"></span>
-                </div>
-            </a>
-            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                <div class="btn btn-primary rounded" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-next-icon mb-n2"></span>
-                </div>
-            </a>
-        </div>
-    </div>
-    <!-- Carousel End -->
-
-
-    <!-- Booking Start -->
-    <div class="container-fluid bg-light" id="booking">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="bg-primary py-5 px-4 px-sm-5">
-                        <form id="form" enctype="multipart/form-data">
-
-                            <div class="form-group">
-                                <input type="text" id="name" class="form-control" placeholder="Your Name" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="tel" id="phone" class="form-control" placeholder="Phone Number" required>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" id="location" class="form-control"
-                                    placeholder="Fetching your current location..." readonly required>
-
-                            </div>
-
-                            <div class="form-group">
-                                <textarea id="address" class="form-control" placeholder="Full Address" rows="3"
-                                    required></textarea>
-                            </div>
-
-                            <div class="form-group">
-                                <select id="service" class="form-control" required>
-                                    <option value="" disabled selected>Select A Service</option>
-                                    <option value="Rescue">Rescue</option>
-                                    <option value="Veterinary Support">Veterinary Support</option>
-                                    <option value="Precautionary Control">Precautionary Control</option>
-                                    <option value="Training">Training</option>
-                                </select>
-                            </div>
-
-
-
-                            <button type="submit" class="btn btn-light btn-block">Submit</button>
-                        </form>
-                    </div>
-                    <script>
-                        // Autofill location
-                        window.onload = function () {
-                            if (navigator.geolocation) {
-                                navigator.geolocation.getCurrentPosition(
-                                    function (position) {
-                                        const lat = position.coords.latitude;
-                                        const lon = position.coords.longitude;
-                                        document.getElementById("location").value = `Lat: ${lat}, Lng: ${lon}`;
-                                    },
-                                    function (error) {
-                                        document.getElementById("location").value = "Location access denied";
-                                    }
-                                );
-                            } else {
-                                document.getElementById("location").value = "Geolocation not supported";
-                            }
-                        };
-                    </script>
-
-                    <script>
-                        document.getElementById("form").addEventListener("submit", function (e) {
-                            e.preventDefault();
-
-                            const form = document.getElementById("form");
-                            const formData = new FormData();
-
-                            // Basic fields
-                            formData.append("name", document.getElementById("name").value);
-                            formData.append("phone", document.getElementById("phone").value);
-                            formData.append("location", document.getElementById("location").value);
-                            formData.append("address", document.getElementById("address").value);
-                            formData.append("service", document.getElementById("service").value);
-
-
-
-                            fetch("https://script.google.com/macros/s/AKfycbwyov1QeerM9miQTV3oKmeaPtwLlbAvx4QhQH4f3MABh6kRY6U0NA8gy1HPfOpIaa3Jlw/exec", {
-                                method: "POST",
-                                body: formData
-                            })
-                                .then(response => response.text())
-                                .then(data => {
-                                    alert("Submitted successfully!");
-                                    form.reset();
-                                })
-                                .catch(error => {
-                                    alert("Failed to submit form");
-                                    console.error(error);
-                                });
-                        });
-                    </script>
-
-                </div>
-                <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
-                    <h4 class="text-secondary mb-3">Think have a wild anilam in home?</h4>
-                    <h1 class="display-4 mb-4">Call Us <span class="text-primary">For Help</span></h1>
-                    <p>Confronting a wild animal without proper knowledge and protection can be deadly.</p>
-                    <div class="row py-2">
-                        <div class="col-sm-6">
-
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/sanctuary.png" alt="Veterinary Icon"
-                                        style="width: 40px; height: auto;" class="mr-3">
-                                    <h5 class="m-0">Rescue</h5>
-                                </div>
-                                <p>Our TrainedProfessionals will Rescue them and take your burden</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/veterinarian.png" alt="Veterinary Icon" style="width: 40px; height: auto;"
-                                        class="mr-3">
-                                    <h5 class="m-0">Veterinary Support</h5>
-                                </div>
-
-                                <p>Our experienced veterinary doctors can help your pet in an emergency</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                    <h1 class="flaticon-grooming font-weight-normal text-secondary m-0 mr-3"></h1>
-                                    <h5 class="text-truncate m-0">Precautionary Control</h5>
-                                </div>
-                                <p class="m-0">Our team will secure your complex area with precautionary measures for
-                                    snake hazards </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-2">
-                                    <h1 class="flaticon-toy font-weight-normal text-secondary m-0 mr-3"></h1>
-                                    <h5 class="text-truncate m-0">Tranning</h5>
-                                </div>
-                                <p class="m-0">We shere our experience and knowledge with beginners</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Booking Start -->
-
-
-    <!-- About Start -->
-    <div class="container py-5" id="about">
-        <div class="row py-5">
-            <div class="col-lg-7 pb-5 pb-lg-0 px-3 px-lg-5">
-                <h4 class="text-secondary mb-3">About Us</h4>
-                <h1 class="display-4 mb-4"><span class="text-primary">Rescue</span> & <span
-                        class="text-secondary">Care</span></h1>
-                <h5 class="text-muted mb-3">We rescue wild animals, provide essential veterinary care, train individuals
-                    in wildlife handling, and offer precautionary support to prevent animal-human conflicts.</h5>
-                <p class="mb-4">Our mission is to protect and preserve wildlife while educating communities to coexist
-                    safely and compassionately with nature. Together, we ensure a safer future for animals and people
-                    alike.</p>
-                <ul class="list-inline">
-                    <li>
-                        <h5><i class="fa fa-check-double text-secondary mr-3"></i>Best In Industry</h5>
-                    </li>
-                    <li>
-                        <h5><i class="fa fa-check-double text-secondary mr-3"></i>Emergency Services</h5>
-                    </li>
-                    <li>
-                        <h5><i class="fa fa-check-double text-secondary mr-3"></i>24/7 Emergency Support</h5>
-                    </li>
-                </ul>
-                <a href="" class="btn btn-lg btn-primary mt-3 px-4">Call Us</a>
-            </div>
-            <div class="col-lg-5">
-                <div class="row px-3">
-                    <div class="col-12 p-0">
-                        <video class="img-fluid" src="vid1.mp4" controls muted></video>
-
-                    </div>
-                    <!-- <div class="col-6 p-0">
-                        <img class="img-fluid w-100" src="img/about-2.jpg" alt="">
-                    </div>
-                    <div class="col-6 p-0">
-                        <img class="img-fluid w-100" src="img/about-3.jpg" alt="">
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Services Start -->
-    <div id="service" class="container-fluid bg-light pt-5">
-        <div class="container py-5">
-            <div class="d-flex flex-column text-center mb-5">
-                <h4 class="text-secondary mb-3">Our Activity</h4>
-                <h1 class="display-4 m-0"><span class="text-primary">Social</span> Activity</h1>
-            </div>
-            <div class="row pb-3">
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Relocation</h3>
-                        <p>We safely rescue and relocate wild animals, gently returning them to their natural
-                            habitats—where they truly belong, free, protected, and at peace in the wild.
-                        </p>
-                        <!-- <a class="text-uppercase font-weight-bold" href="">Read More</a> -->
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-food display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Feeding</h3>
-                        <p>We lovingly feed hungry street animals, offering them warmth, care, and hope. Every meal is a
-                            promise that they are seen, valued, and never truly alone.
-                        </p>
-                        <!-- <a class="text-uppercase font-weight-bold" href="">Read More</a> -->
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Kind Meals</h3>
-                        <p>We provide warm, nutritious meals to the poor and elderly, spreading kindness and ensuring no
-                            one feels forgotten, hungry, or alone in their time of need.</p>
-
-                        <!-- <a class="text-uppercase font-weight-bold" href="">Read More</a> -->
-                    </div>
-                </div>
-                <!-- <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-cat display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Per Training</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos,
-                            rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-dog display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Pet Exercise</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos,
-                            rebum sit vero stet ipsum justo</p>
-                        <a class="text-uppercase font-weight-bold" href="">Read More</a>
-                    </div>
-                </div> -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
-                        <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Treatment</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos,
-                            rebum sit vero stet ipsum justo</p>
-                        <!-- <a class="text-uppercase font-weight-bold" href="">Read More</a> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Services End -->
-
-
-    <!-- Features Start -->
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-5">
-                <video class="img-fluid" src="vid2 (1).mp4" controls muted></video>
-            </div>
-            <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
-                <h4 class="text-secondary mb-3">Why Choose Us?</h4>
-                <h1 class="display-4 mb-4"><span class="text-primary">Over 12 Years</span> of Dedicated Service</h1>
-                <p class="mb-4">With more than a decade of heartfelt service, we’ve built trust through compassion,
-                    commitment, and consistent care for both people and animals in need.</p>
-
-                <div class="row py-2">
-                    <div class="col-6">
-                        <div class="d-flex align-items-center mb-4">
-                            <h1 class="flaticon-cat font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <h5 class="text-truncate m-0">Best In Industry</h5>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="d-flex align-items-center mb-4">
-                            <h1 class="flaticon-doctor font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <h5 class="text-truncate m-0">Emergency Services</h5>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="d-flex align-items-center">
-                            <h1 class="flaticon-care font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <h5 class="text-truncate m-0">Special Care</h5>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="d-flex align-items-center">
-                            <h1 class="flaticon-dog font-weight-normal text-secondary m-0 mr-3"></h1>
-                            <h5 class="text-truncate m-0">Fast Response</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Features End -->
-
-
-    <!-- Pricing Plan Start 
-    <div class="container-fluid bg-light pt-5 pb-4">
-        <div class="container py-5">
-            <div class="d-flex flex-column text-center mb-5">
-                <h4 class="text-secondary mb-3">Pricing Plan</h4>
-                <h1 class="display-4 m-0">Choose the <span class="text-primary">Best Price</span></h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0">
-                        <div class="card-header position-relative border-0 p-0 mb-4">
-                            <img class="card-img-top" src="img/price-1.jpg" alt="">
-                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"
-                                style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
-                                <h3 class="text-primary mb-3">Basic</h3>
-                                <h1 class="display-4 text-white mb-0">
-                                    <small class="align-top"
-                                        style="font-size: 22px; line-height: 45px;">$</small>49<small
-                                        class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="card-body text-center p-0">
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>Feeding
-                                </li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>Boarding
-                                </li>
-                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i>Spa &
-                                    Grooming</li>
-                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i>Veterinary
-                                    Medicine</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer border-0 p-0">
-                            <a href="" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Signup Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0">
-                        <div class="card-header position-relative border-0 p-0 mb-4">
-                            <img class="card-img-top" src="img/price-2.jpg" alt="">
-                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"
-                                style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
-                                <h3 class="text-secondary mb-3">Standard</h3>
-                                <h1 class="display-4 text-white mb-0">
-                                    <small class="align-top"
-                                        style="font-size: 22px; line-height: 45px;">$</small>99<small
-                                        class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="card-body text-center p-0">
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>Feeding
-                                </li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>Boarding
-                                </li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>Spa &
-                                    Grooming</li>
-                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i>Veterinary
-                                    Medicine</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer border-0 p-0">
-                            <a href="" class="btn btn-secondary btn-block p-3" style="border-radius: 0;">Signup Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card border-0">
-                        <div class="card-header position-relative border-0 p-0 mb-4">
-                            <img class="card-img-top" src="img/price-3.jpg" alt="">
-                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100"
-                                style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
-                                <h3 class="text-primary mb-3">Premium</h3>
-                                <h1 class="display-4 text-white mb-0">
-                                    <small class="align-top"
-                                        style="font-size: 22px; line-height: 45px;">$</small>149<small
-                                        class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="card-body text-center p-0">
-                            <ul class="list-group list-group-flush mb-4">
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>Feeding
-                                </li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>Boarding
-                                </li>
-                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>Spa &
-                                    Grooming</li>
-                                <li class="list-group-item p-2"><i
-                                        class="fa fa-check text-secondary mr-2"></i>Veterinary Medicine</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer border-0 p-0">
-                            <a href="" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Signup Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    Pricing Plan End -->
-<!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<!-- revews -->
-   
-<!-- <script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-d26da5e4-b7e4-4fa7-9ad3-8bafae277001" data-elfsight-app-lazy></div>
- -->
-    <!-- Team Start -->
-    <div class="container mt-5 pt-5 pb-3">
-        <div class="d-flex flex-column text-center mb-5">
-            <h4 class="text-secondary mb-3">Our Team</h4>
-            <h1 class="display-4 m-0">Meet Our <span class="text-primary">Team</span></h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/feature1.jpg" style="height: 260px;" alt="">
-                    <!-- <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>Mollie Ross</h5>
-                            <i>Founder & CEO</i>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/feature2.jpg" style="height: 260px;" alt="">
-                    <!-- <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>Jennifer Page</h5>
-                            <i>Chef Executive</i>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/feature3.jpg" style="height: 260px;" alt="">
-                    <!-- <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>Kate Glover</h5>
-                            <i>Doctor</i>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team card position-relative overflow-hidden border-0 mb-4">
-                    <img class="card-img-top" src="img/feature4.jpg" style="height: 260px;" alt="">
-                    <!-- <div class="card-body text-center p-0">
-                        <div class="team-text d-flex flex-column justify-content-center bg-light">
-                            <h5>Lilly Fry</h5>
-                            <i>Trainer</i>
-                        </div>
-                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-primary rounded-circle text-center px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid bg-light my-5 p-0 py-5">
-        <div class="container p-0 py-5">
-            <div class="d-flex flex-column text-center mb-5">
-                <h4 class="text-secondary mb-3">Testimonial</h4>
-                <h1 class="display-4 m-0">What Our <span class="text-primary">Testimonials Show</span></h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="bg-white mx-3 p-4 text-center">
-                    <img class="img-fluid" src="img/paper1.jpg" style="height: 215px;" alt="Testimonial 1">
-
-                </div>
-                <div class="bg-white mx-3 p-4 text-center">
-                    <img class="img-fluid" src="img/paper2.jpg" style="height: 215px;" alt="Testimonial 2">
-                </div>
-                <div class="bg-white mx-3 p-4 text-center">
-                    <img class=" img-fluid" src="img/paper3.jpg" style="height: 215px;" alt="Testimonial 3">
-                </div>
-                <div class="bg-white mx-3 p-4 text-center">
-                    <img class="img-fluid" src="img/paper4.jpg" style="height: 215px;" alt="Testimonial 4">
-                </div>
-                <div class="bg-white mx-3 p-4 text-center">
-                    <img class="img-fluid" src="img/paper5.jpg" style="height: 215px;" alt="Testimonial 4">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
-
-
-    <!-- Blog Start -->
-    <div class="container pt-5">
-        <div class="d-flex flex-column text-center mb-5">
-            <h4 class="text-secondary mb-3">Our Work</h4>
-            <h1 class="display-4 m-0"><span class="text-primary">Past</span> Rescues</h1>
-        </div>
-        <div class="row pb-3">
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top" src="img/resc1.jpg" style="height: 345px;" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top" src="img/resc2.jpg" style="height: 345px;" alt="">
-
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top" src="img/resc3.jpg" style="height: 345px;" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top" src="img/resc4.jpg" style="height: 345px;" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top" src="img/resc5.jpg" style="height: 345px;" alt="">
-                </div>
-            </div>
-            <div class="col-lg-4 mb-4">
-                <div class="card border-0 mb-2">
-                    <img class="card-img-top" src="img/resc6.jpg" style="height: 345px;" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
-
-
-    <!-- Footer Start 
-    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
-        <div class="row pt-5">
-            <div class="col-lg-4 col-md-12 mb-5">
-                <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">Pet</span>Lover</h1>
-                <p class="m-0">Ipsum amet sed vero et lorem stet eos ut, labore sed sed stet sea est ipsum ut. Volup
-                    amet ea sanct ipsum, dolore vero lorem no duo eirmod. Eirmod amet ipsum no ipsum lorem clita ut. Ut
-                    sed sit lorem ea lorem sed, amet stet sit sea ea diam tempor kasd kasd. Diam nonumy etsit tempor ut
-                    sed diam sed et ea</p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-primary mb-4">Get In Touch</h5>
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>Location, City, Country</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
-                        <div class="d-flex justify-content-start mt-4">
-                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
-                                style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-primary mb-4">Popular Links</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Team</a>
-                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-primary mb-4">Newsletter</h5>
-                        <form action="">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-0" placeholder="Your Name"
-                                    required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control border-0" placeholder="Your Email"
-                                    required="required" />
-                            </div>
-                            <div>
-                                <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit
-                                    Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style="background: #111111;">
-        <div class="row">
-            <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">
-                    &copy; <a class="text-white font-weight-bold" href="https://freewebsitecode.com">Your Site Name</a>.
-                    All Rights Reserved. Designed by
-                    <a class="text-white font-weight-bold" href="https://freewebsitecode.com">Free Website Code</a>
-                </p>
-            </div>
-            <div class="col-md-6 text-center text-md-right">
-                <ul class="nav d-inline-flex">
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Terms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Help</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    })();
+  </script>
 </body>
-
 </html>
